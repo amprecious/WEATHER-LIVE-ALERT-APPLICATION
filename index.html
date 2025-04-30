@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Pulse</title>
+
+  <!-- Manifest & PWA essentials -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <!-- Fonts and CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link href="style.css" rel="stylesheet" />
+  
+  <!-- Leaflet scripts -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-velocity/dist/leaflet-velocity.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1 class="app-title">🌦️ Weather Pulse</h1>
+      <div class="search-bar">
+        <input type="text" id="cityInput" placeholder="Search city..." />
+        <button id="searchBtn">Get Weather</button>
+      </div>
+    </header>
+
+    <!-- Alert for severe weather -->
+    <div id="alertBanner" class="alert-banner" style="display:none;"></div>
+
+    <!-- Current Weather -->
+    <section id="currentWeather" class="weather-card"></section>
+
+    <!-- Daily Forecast -->
+    <section class="forecast-section">
+      <h2>📅 7-Day Forecast</h2>
+      <div id="dailyForecast" class="forecast-grid"></div>
+    </section>
+
+    <!-- Radar Section -->
+    <section id="radarSection" class="radar-container">
+      <h2>🌩️ Live Radar Map</h2>
+      <div id="radarMap" class="radar-map"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
